@@ -2,44 +2,92 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #121212;
+  background-color: #ffffff;
   padding: 16px 32px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .logo {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #2c3e50;
   font-weight: bold;
-  color: #ffffff;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  font-size: 1.75rem;
 }
 
 .nav {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 32px;
 }
 
 .nav-link {
-  color: #bbb;
+  color: #2c3e50;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  position: relative;
 }
 
 .nav-link:hover {
-  color: #ffffff;
+  color: #2ecc71;
 }
 
-.login {
-  color: #bbb;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #2ecc71;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 32px;
+  padding-left: 32px;
+  border-left: 1px solid #e1e1e1;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  color: #2c3e50;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  border-radius: 20px;
 }
 
-.login:hover {
-  color: #ffffff;
+.nav-button:hover {
+  background-color: #f8f9fa;
+  color: #2ecc71;
 }

@@ -1,4 +1,4 @@
-.produtos-admin-container {
+.categorias-admin-container {
   min-height: 100vh;
   background-color: #f5f5f5;
   color: #2c3e50;
@@ -145,26 +145,7 @@
   gap: 16px;
 }
 
-.category-filter {
-  padding: 12px 20px;
-  border: 2px solid #e1e1e1;
-  border-radius: 12px;
-  font-size: 1rem;
-  color: #2c3e50;
-  background-color: #f8f9fa;
-  cursor: pointer;
-  min-width: 200px;
-  transition: all 0.2s ease;
-}
-
-.category-filter:focus {
-  outline: none;
-  border-color: #2ecc71;
-  background-color: white;
-  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
-}
-
-.add-product-btn {
+.add-category-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -179,70 +160,52 @@
   white-space: nowrap;
 }
 
-.add-product-btn:hover {
+.add-category-btn:hover {
   background-color: #27ae60;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
 }
 
-.produtos-grid {
+.categorias-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 
-.produto-card {
+.categoria-card {
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-.produto-card:hover {
+.categoria-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.produto-imagem {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid #f0f0f0;
+.categoria-info {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.produto-info {
-  padding: 20px;
+.categoria-icon {
+  font-size: 1.5rem;
+  color: #2ecc71;
 }
 
-.produto-nome {
+.categoria-nome {
   font-size: 1.25rem;
   font-weight: 600;
   color: #2c3e50;
-  margin: 0 0 8px 0;
-}
-
-.produto-categoria {
-  color: #7f8c8d;
-  font-size: 0.95rem;
-  margin: 0 0 12px 0;
-}
-
-.produto-preco {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2ecc71;
-  margin: 0 0 8px 0;
-}
-
-.produto-estoque {
-  color: #7f8c8d;
-  font-size: 0.95rem;
   margin: 0;
 }
 
-.produto-actions {
-  padding: 16px 20px;
+.categoria-actions {
+  padding: 16px;
   background-color: #f8f9fa;
   display: flex;
   gap: 12px;
@@ -256,10 +219,10 @@
   justify-content: center;
   gap: 8px;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   border: none;
   width: 100px;
 }
@@ -316,13 +279,92 @@
   color: #7f8c8d;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.no-results-icon {
+  font-size: 3rem;
+  color: #95a5a6;
+  margin-bottom: 16px;
 }
 
-textarea.modal-input {
-  resize: vertical;
-  min-height: 100px;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  margin: 0 0 24px 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
+
+.modal-input:focus {
+  outline: none;
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.modal-cancel,
+.modal-save {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-cancel {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  border: none;
+}
+
+.modal-cancel:hover {
+  background-color: #e9ecef;
+}
+
+.modal-save {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+}
+
+.modal-save:hover {
+  background-color: #27ae60;
+}
+
+.modal-save:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
 }

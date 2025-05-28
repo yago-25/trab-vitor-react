@@ -1,0 +1,278 @@
+.carrinho-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #2c3e50;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.carrinho-header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.carrinho-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #e9ecef;
+  transform: translateX(-2px);
+}
+
+.carrinho-content {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.carrinho-items {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.carrinho-items h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0 0 24px 0;
+}
+
+.carrinho-item {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.item-imagem {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-info h3 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.item-quantidade {
+  color: #7f8c8d;
+  margin: 0 0 8px 0;
+}
+
+.item-preco {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2ecc71;
+  margin: 0;
+}
+
+.carrinho-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.carrinho-total strong {
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.carrinho-total span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2ecc71;
+}
+
+.checkout-form {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.checkout-form h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0 0 24px 0;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
+}
+
+.metodos-pagamento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.metodo-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.metodo-btn svg {
+  font-size: 1.5rem;
+  color: #7f8c8d;
+}
+
+.metodo-btn span {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.metodo-btn.selected {
+  background-color: #e8f8f0;
+  border-color: #2ecc71;
+}
+
+.metodo-btn.selected svg {
+  color: #2ecc71;
+}
+
+.finalizar-compra-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finalizar-compra-btn:not(:disabled):hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.finalizar-compra-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.carrinho-vazio {
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.carrinho-icon {
+  font-size: 4rem;
+  color: #95a5a6;
+  margin-bottom: 24px;
+}
+
+.carrinho-vazio p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 24px;
+}
+
+.voltar-loja-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.voltar-loja-btn:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
