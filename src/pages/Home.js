@@ -5,7 +5,6 @@ import Header from "../components/Header/Header";
 import { useNavigate } from "react-router-dom";
 import {
   FaShoppingCart,
-  FaSearch,
   FaPlus,
   FaMinus,
   FaTimes,
@@ -99,7 +98,6 @@ function Home() {
       <Header />
       <main className="main-content">
         <div className="search-bar">
-          <FaSearch className="search-icon" />
           <input
             type="text"
             placeholder="Buscar produtos..."
