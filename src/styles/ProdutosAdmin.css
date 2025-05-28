@@ -1,0 +1,100 @@
+.produtos-admin-container {
+  padding: 24px 40px;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.produtos-admin-container h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #4caf50;
+}
+
+.produtos-table {
+  padding: 24px 40px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #000000aa;
+}
+
+.produtos-table thead tr {
+  background-color: #333;
+}
+
+.produtos-table th,
+.produtos-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  vertical-align: middle;
+}
+
+.produtos-table th {
+  font-weight: 600;
+  font-size: 14px;
+  color: #cfd8dc;
+  user-select: none;
+}
+
+.produtos-imagem {
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.produto-imagem {
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.btn-editar,
+.btn-excluir {
+  background-color: transparent;
+  border: 1.5px solid;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  color: #f0f0f0;
+  user-select: none;
+}
+
+.btn-editar {
+  border-color: #4caf50;
+}
+
+.btn-editar:hover {
+  background-color: #4caf50;
+  color: #1e1e1e;
+}
+
+.btn-excluir {
+  border-color: #e74c3c;
+}
+
+.btn-excluir:hover {
+  background-color: #e74c3c;
+  color: #1e1e1e;
+}
+
+.loading {
+  color: #4caf50;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 40px;
+}
