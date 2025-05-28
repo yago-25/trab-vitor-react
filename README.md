@@ -1,70 +1,182 @@
-# Getting Started with Create React App
+# E-commerce React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto de e-commerce desenvolvido em React que oferece uma experiência completa de compra online, incluindo gerenciamento administrativo.
 
-## Available Scripts
+## 🚀 Funcionalidades Principais
 
-In the project directory, you can run:
+### 🛍️ Área do Cliente
 
-### `npm start`
+- **Catálogo de Produtos**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  - Listagem de produtos com imagens, preços e descrições
+  - Busca de produtos por nome ou descrição
+  - Interface moderna
+  - Feedback visual ao adicionar produtos ao carrinho
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Carrinho de Compras**
 
-### `npm test`
+  - Carrinho flutuante com contador de itens
+  - Gerenciamento de quantidades
+  - Cálculo automático do total
+  - Persistência dos itens durante a navegação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Checkout**
+  - Formulário de dados do cliente
+  - Seleção de método de pagamento
+    - Cartão de Crédito
+    - Boleto
+    - Dinheiro
+    - PIX
+  - Resumo do pedido
+  - Confirmação de compra
 
-### `npm run build`
+### 👨‍💼 Área Administrativa
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Dashboard**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Visão geral com estatísticas
+    - Total de produtos
+    - Total de categorias
+    - Total de vendas
+  - Acesso rápido às funcionalidades
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Gerenciamento de Produtos**
 
-### `npm run eject`
+  - Listagem de produtos
+  - Adição de novos produtos
+  - Edição de produtos existentes
+  - Exclusão de produtos
+  - Upload de imagens
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Gerenciamento de Categorias**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - Listagem de categorias
+  - Criação de novas categorias
+  - Edição de categorias
+  - Exclusão de categorias
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Relatório de Vendas**
+  - Listagem de todas as vendas
+  - Detalhes de cada venda
+  - Filtro por cliente
+  - Status do pedido
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔌 Integração com API
 
-## Learn More
+A aplicação se conecta com um backend através de uma API utilizando o Axios. As principais integrações incluem:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Endpoints Utilizados
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+// Configuração base do Axios
+import axios from "axios";
 
-### Code Splitting
+export const api = axios.create({
+  baseURL: "URL_DA_API",
+});
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+// Endpoints
+-GET / produtos / { usuario } - // Lista todos os produtos
+  GET / categorias - // Lista todas as categorias
+  GET / venda - // Lista todas as vendas
+  POST / venda - // Cria uma nova venda
+  DELETE / venda - // Remove uma venda
+  POST / produtos - // Adiciona novo produto
+  PUT / produtos - // Atualiza produto existente
+  DELETE / produtos; // Remove produto
+```
 
-### Analyzing the Bundle Size
+### Autenticação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Sistema de login com token JWT
+- Armazenamento do token no localStorage
+- Rotas protegidas para área administrativa
 
-### Making a Progressive Web App
+## 📱 Telas do Sistema
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Área Pública
 
-### Advanced Configuration
+1. **Home (/)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   - Listagem de produtos
+   - Busca
+   - Carrinho flutuante
 
-### Deployment
+2. **Carrinho (/carrinho)**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   - Lista de itens
+   - Formulário de checkout
+   - Seleção de pagamento
 
-### `npm run build` fails to minify
+3. **Agradecimento (/agradecimento)**
+   - Confirmação de compra
+   - Botão para voltar à loja
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Área Administrativa
+
+1. **Login (/login)**
+
+   - Formulário de acesso
+   - Validação de credenciais
+
+2. **Painel (/painel)**
+
+   - Dashboard com estatísticas
+   - Menu de ações administrativas
+
+3. **Produtos (/admin/produtos)**
+
+   - CRUD de produtos
+   - Upload de imagens
+
+4. **Categorias (/admin/categorias)**
+
+   - CRUD de categorias
+
+5. **Vendas (/admin/vendas)**
+   - Relatório de vendas
+   - Detalhes de pedidos
+
+## 🎨 Design System
+
+O projeto utiliza um design system consistente com:
+
+- **Cores**
+
+  - Principal: #2ecc71 (Verde)
+  - Secundária: #2c3e50 (Azul escuro)
+  - Erro: #e74c3c (Vermelho)
+  - Background: #f5f5f5 (Cinza claro)
+
+- **Componentes**
+  - Cards com sombras e hover effects
+  - Botões com feedback visual
+  - Loading spinners
+  - Inputs estilizados
+  - Ícones do React Icons
+
+## 🔧 Instalação e Uso
+
+1. Clone o repositório
+
+```bash
+git clone [URL_DO_REPOSITORIO]
+```
+
+2. Instale as dependências
+
+```bash
+npm install
+```
+
+4. Execute o projeto
+
+```bash
+npm start
+```
+
+## 📚 Bibliotecas Utilizadas
+
+- **React Router Dom**: Navegação
+- **Axios**: Requisições HTTP
+- **React Icons**: Ícones
